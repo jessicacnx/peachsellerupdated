@@ -13,6 +13,7 @@ the site:
 - There are some information about peache and peache sellers on the website.
 - There are web forms connected to the index home page.
 
+Ver. 1.1
 
 link:
-- <a href="https://jessicacnx.github.io/peacheseller/">peache seller</a>
+- <a href="https://jessicacnx.github.io/peachsellerupdated/">peache seller</a>
