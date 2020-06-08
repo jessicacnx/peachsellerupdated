@@ -25,7 +25,6 @@ def sellerproduct():
     fread = open('/info.txt', 'r')
     
     for line in fread: 
-      count += 1
       if sp_nric == line[7]:
         x = True
         break
@@ -70,7 +69,7 @@ def sellerproduct():
       #valid
       return render_template("/productcompleted.html")
 
-    else x == False:
+    else:
       #invalid
       return render_template("/productrejected.html")
 
