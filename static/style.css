@@ -1,0 +1,309 @@
+
+/* ---------------------------------------------------------------- */
+    /* __body__ */
+
+/* Index */
+body {
+  background-color: #dea5a4;
+  padding:70px;
+}
+
+/* Register Form */
+body1 {
+  background-color: #9f816f;
+}
+
+/* Product Form */
+body2 {
+  background-color: #FFE5B4;
+}
+
+/* ---------------------------------------------------------------- */
+
+    /* __para__ */
+
+/* Index Information */
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color:#595959;
+}
+
+p1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  color:#595959;
+}
+
+/* Form Text*/
+p2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color:#595959;
+}
+
+/* More Information in Form */
+p3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #7d7d7d;
+}
+
+p4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #595959;
+}
+
+/* ---------------------------------------------------------------- */
+
+    /* __div__ */
+.header{
+  padding: 100px;
+  text-align: left;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 170px;
+  margin-top: 30px;
+}
+
+.fheader{
+  padding: 70px;
+  text-align: left;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 170px;
+  margin-top: 40px;
+}
+
+.card{
+  background: white;
+  padding: 70px;
+  text-align: left;
+  border-radius: 10px;
+  margin: 170px;
+  margin-top: 15px;
+}
+
+.fcard{
+  background: white;
+  padding: 70px;
+  text-align: left;
+  border-radius: 10px;
+  margin: 170px;
+  margin-top: 10px;
+}
+
+.image{
+    background-image: url("https://i.imgur.com/AAbkm4O.png");
+    background-position: center;
+    height: 40%;
+    width: auto;
+}
+
+.fimage{
+    background-image:url("https://i.imgur.com/AAbkm4O.png");
+    background-position: center;
+    height: 40%;
+    width: auto;
+}
+
+/* ---------------------------------------------------------------- */
+
+    /* __input__ */
+
+/* Submtit Button */
+input[type=submit]{
+  background-color: #e38d86;
+  border: 10px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  transition: 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin: 7px 7px; 
+  padding:5px;
+}
+
+/* Submtit Button Hover */
+input[type=submit]:hover {
+  background-color: #d97871;
+  border: 10px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  transition: 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin: 7px 7px; 
+  padding:5px;
+}
+
+/*-----------------------------------------------------------------------------*/
+    /* Bullet Point Button */
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #e09687;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* --------------------------------------------------------------------*/
+
+/* Text Box */
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  color:#4f4f4f;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+/* link */
+a{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #c98a85;
+}
+
+/* image */
+img{
+  height: 30%;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ---------------------------------------------------------------- */
+
+    /* __heading__ */
+
+/* Big Header */
+h1 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+  color: #2b2d2f;
+}
+
+/* Information Headers */
+h2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  font-size: 30px;
+  color: #363636;
+}
+
+/* Common Questions */
+h3{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: #2b2d2f;
+}
+
+/* Form Questions */
+h4{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #363636;
+}
+
+/* Form Headers */
+h5{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #363636;
+}
+
+/* peache */
+h6{
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  font-size: 60px;
+  color: #434b4d;
+}
+
+h7{
+  text-align: left;
+  font-family: 'Comfortaa', cursive;
+  font-size: 60px;
+  color: #434b4d;
+}

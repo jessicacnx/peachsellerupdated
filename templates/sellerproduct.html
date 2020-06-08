@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <title>peache seller product</title>
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "../static/style.css" href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../media/peachelogo.PNG">
+
+	</head>
+
+	<body1>
+    
+	<div class="fimage">
+	</div>
+
+    	<div class="fheader">
+		<h7>peache   seller</h7>
+      		<br><br><br>
+      		<p2> Upload your Product </p2><br><br>
+      		<p3> If you want to add more of your products onto peache, please complete the form below. </p3>
+    	</div>
+
+	<br><br>
+
+	<!-- Check -->
+
+    	<div class="fcard">
+      		<h5> Seller Information </h5>
+
+      		<form action="/" method="POST">
+        		<h4>Seller NRIC (Input Last 6 Digits) </h4>
+        		<input type="text" name="sp_nric"/>
+
+        		<h4>Seller Password </h4>
+        		<input type="text" name="sp_pw"/>
+      		</form>
+    	</div>
+    
+    	<!-- Product -->
+
+    	<div class="fcard">
+      		<h5> Product Information </h5>
+
+      		<form action="/" method="POST">
+        		<h4>Product Name </h4>
+        		<input type="text" name="pname"/>
+
+        		<h4>Product Price </h4>
+        		<input type="text" name="pprice"/>
+
+        		<h4>Product Link </h4>
+        		<p3> Please enter the url of where your product is sold. </p3>
+        		<input type="text" name="plink"/>
+      		</form>
+
+      		<form action="upload.php" method="post" enctype="multipart/form-data">
+        		<h4>Product Image </h4>
+        		<p3> Please enter the url of your jpg image. </p3>
+        		<input type="text" name="pimg"/>
+      		</form>
+    	</div>
+
+    	<!-- confirmation -->
+
+    	<div class="fcard">
+      		<form action="/" method="POST">
+        		<h4>By clicking agree, I hereby declare that the above information provided in this entire form is true & accurate; & I would like to proceed with my application for my product.</h4>
+			<label class="container"><p4>Agree</p4>
+  			<input type="checkbox" name="sdeclare" id="Disagree">
+  			<span class="checkmark"></span>
+			</label>
+				
+			<label class="container"><p4>Disgree</p4>
+  			<input type="checkbox" name="sdeclare" id="Disagree">
+  			<span class="checkmark"></span>
+			</label>
+      		</form>
+    	</div>
+	
+	<div class="fcard">
+		<form action="/" method="POST">
+			  <h1><input type="submit" value="Submit Form"><h1>
+		</form>
+	</div>
+	<br>
+	<br>
+	<h1> p e a c h e </h1>
+	<br>
+
+  </body1>
+</html>
