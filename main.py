@@ -5,8 +5,8 @@ from werkzeug import secure_filename
 from PIL import Image as img
 app = Flask(__name__)
 
-info = []
-products = []
+info = ["test"]
+products = ["testp"]
 names = ["eda", "shian pei", "jessica"]
 
 # Home Page
@@ -22,7 +22,7 @@ def staff():
   if request.method == "GET": # get
     return render_template('staff.html') 
   else: # post
-    pwd = request.form.get('pwd')
+    pwd = request.form('pwd')
    
     if pwd == "eda" or pwd == "shian pei" or pwd == "jessica":
       render_template('staffinfo.html', pwd=pwd, info=info, products=products)
