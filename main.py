@@ -4,11 +4,10 @@ import numpy
 from werkzeug import secure_filename
 from PIL import Image as img
 app = Flask(__name__)
-app.config['products']
 
 info = []
 products = []
-names = [eda, shian pei, jessica]
+names = ["eda", "shian pei", "jessica"]
 
 # Home Page
 @app.route('/index')
