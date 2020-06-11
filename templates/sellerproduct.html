@@ -11,10 +11,7 @@
 	</head>
 
 	<body1>
-    
-	<div class="fimage">
-	</div>
-
+	<br>
     	<div class="fheader">
 		<h7>peache   seller</h7>
       		<br><br><br>
@@ -55,10 +52,11 @@
         		<input type="text" name="plink"/>
       		</form>
 
-      		<form action="upload.php" method="post" enctype="multipart/form-data">
+      		<form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
         		<h4>Product Image </h4>
-        		<p3> Please enter the url of your jpg image. </p3>
-        		<input type="text" name="pimg"/>
+        		<p3> Please upload your jpg image of your product. </p3>
+        		<input type = "file" name = "pimage" />
+         		<input type = "submit"/>
       		</form>
     	</div>
 
