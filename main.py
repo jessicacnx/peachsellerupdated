@@ -27,7 +27,7 @@ def staff():
     if name == "eda" or name == "shian pei" or name == "jessica":
       render_template('info.html', name=name, info=info, products=products)
     else:
-      render_template('staff.html')
+      render_template('index.html')
     
 
                      
