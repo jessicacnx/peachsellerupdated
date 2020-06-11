@@ -29,8 +29,11 @@ def staff():
     pwd = request.form.get('pwd')
     for i in range(len(names)):
       if pwd == names[i]:
-        break
-    render_template('staffinfo.html', pwd=pwd, products=products, info=info)
+        message = """<html>
+        <body>products</body><br><br>
+        <body>info</body>
+        </html>"""
+        render_template('staffinfo.html', message=message)
     
 
                      
