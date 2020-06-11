@@ -25,7 +25,7 @@ def staff():
     name = request.form.get('pwd')
    
     if name == "eda" or name == "shian pei" or name == "jessica":
-      render_template('staffinfo.html', name=name, info=info, products=products)
+      render_template('info.html', name=name, info=info, products=products)
     else:
       render_template('staff.html')
     
