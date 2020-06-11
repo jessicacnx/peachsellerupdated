@@ -19,7 +19,7 @@ def index():
 # staff
 @app.route('/staff', methods=["GET","POST"])
 def staff():
-  if request.method == "GET": # get
+  if request.form.method == "GET": # get
     return render_template('staff.html') 
   else: # post
     pwd = request.form('pwd')
