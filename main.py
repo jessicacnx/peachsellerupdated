@@ -5,14 +5,36 @@ from werkzeug import secure_filename
 from PIL import Image as img
 app = Flask(__name__)
 
+
+
 info = []
 products = []
 names = ["eda", "shian pei", "jessica"]
+
+
 
 # Home Page
 @app.route('/index')
 def index():
   return render_template('/index.html')
+
+
+
+# staff
+@app.route('/staff')
+def staff():
+  if request.method == "GET":
+    return render_template('/staff.html') 
+  else:
+    pwd = request.form.get('pwd')
+    for i in range(3):
+      if pwd = names[i]:
+        return render_template('/staffinfo.html', names=names, products=products, info=info)
+      else:
+        continue
+    return render_template('/staff.html')
+
+  
 
 # Upload Product Form
 @app.route('/sellerproduct', methods=["GET","POST"])
@@ -107,19 +129,6 @@ def sellerregister():
       #valid
       return render_template("/registeroutput.html")
     return
-
-@app.route('/staff')
-def staff():
-  if request.method == "GET":
-    return render_template('/staff.html') 
-  else:
-    pwd = request.form.get('pwd')
-    for i in range(3):
-      if pwd = names[i]:
-        return render_template('/staffinfo.html', names=names, products=products, info=info)
-      else:
-        continue
-    return render_template('/staff.html')
                      
 # ** Future Plan: **
 # prevent spam (repeated email, spam bots, valid documents)
