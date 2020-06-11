@@ -16,7 +16,7 @@ names = ["eda", "shian pei", "jessica"]
 # Home Page
 @app.route('/index')
 def index():
-  return render_template('/index.html')
+  return render_template('index.html')
 
 
 
@@ -24,13 +24,13 @@ def index():
 @app.route('/staff', methods=["GET","POST"])
 def staff():
   if request.method == "GET": # get
-    return render_template('/staff.html') 
+    return render_template('staff.html') 
   else: # post
     pwd = request.form.get('pwd')
     for i in range(len(names):
-      if pwd = names[i]:
-        return render_template('/staffinfo.html', pwd=pwd, products=products, info=info)
-    return render_template('/staff.html')
+      if pwd == names[i]:
+        return render_template('staffinfo.html', pwd=pwd, products=products, info=info)
+    return render_template('staff.html')
 
                      
 # ** Future Plan: **
