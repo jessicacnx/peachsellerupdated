@@ -21,7 +21,7 @@ def index():
 
 
 # staff
-@app.route('/staff')
+@app.route('/staff', methods=["GET","POST"])
 def staff():
   if request.method == "GET":
     return render_template('/staff.html') 
