@@ -1,8 +1,14 @@
 from flask import Flask, render_template, request
 import smtplib
-import json
+import numpy
+from werkzeug import secure_filename
 from PIL import Image as img
 app = Flask(__name__)
+app.config['products']
+
+info = []
+products = []
+names = [eda, shian pei, jessica]
 
 # Home Page
 @app.route('/index')
@@ -17,27 +23,26 @@ def sellerproduct():
 
   else: # POST
     # record html variables into python variables
-    sp_nric = request.form.get('sp_nric')
+    sp_bname = request.form.get('sp_bname')
     sp_pw = request.form.get('sp_pw')
     sp_dec = request.form.get('p_declare')
     
     # check database
-    fread = open('/info.txt', 'r')
-    
-    for line in fread: 
-      if sp_nric == line[7]:
-        x = True
-        break
-      if not line: 
+    for i in range(len(info):
+      if sp_bname == info[i][7]:
+        if sp_pw ==info[i][9]:
+          x = True
+          break
+        else:
+          return
+      elif i == len(info):
         x = False
         break
-      else: 
-        continue
-    
+      else:
+        return
+              
     if sp_dec == "Disagree":
       x = False
-    
-    fread.close()
 
     # check if valid
     if x == True:
@@ -45,9 +50,9 @@ def sellerproduct():
       pname = request.form.get('pname')
       pprice = request.form.get('pprice')
       plink = request.form.get('plink')
-      pimage = request.form.get('pimage')
+      pimage = request.files['pimage']
+      numpimage = asarray(pimage)
 
-      # write variables into json
       # a Python object (dict)
       p_newdict = {
         "pname": pname,
@@ -55,16 +60,9 @@ def sellerproduct():
         "plink": plink,
         "pimage": pimage,
       }
-
-      # convert into JSON
-      p_newjson = json.dumps(p_newdict)
-
-      # print JSON string into INFO.txt
-      fout = open("/info.txt", 'a')
-      fout.write(p_newjson)
-      fout.close()
-      fin = open("/info.txt", 'r')
-      fin.close()
+                   
+      # https://www.pluralsight.com/guides/importing-image-data-into-numpy-arrays
+      products.append(p_newdict)
 
       #valid
       return render_template("/productcompleted.html")
@@ -73,6 +71,8 @@ def sellerproduct():
       #invalid
       return render_template("/productrejected.html")
 
+                   
+                   
 # Seller Registration Form
 @app.route('/sellerregister', methods=["GET","POST"])
 def sellerregister():
@@ -84,7 +84,6 @@ def sellerregister():
     name = request.form.get('name')
     contactnum = request.form.get('contactnum')
     contactemail = request.form.get('contactemail')
-    nric = request.form.get('nric')
 
     bname = request.form.get('bname')
     bpw = request.form.get('bpw')
@@ -95,29 +94,34 @@ def sellerregister():
       return render_template("/registerfailed.html")
 
     else:
-      # write variables into json
-      # a Python object (dict)
+      # dict
       s_newdict = {
         "name": name,
         "contactnum": contactnum,
         "contactemail": contactemail,
-        "nric": nric,
-      
         "bname": bname,
         "bpw": bpw,
       }
 
-      # convert into JSON
-      s_newjson = json.dumps(s_newdict)
-
       # update database
-      fout = open("info.txt", "a")
-      fout.write(s_newjson + "\n")
-      fout.close()
+      products.append(s_newdict)
+      #valid
       return render_template("/registeroutput.html")
     return
 
-
+@app.route('/staff')
+def staff():
+  if request.method == "GET":
+    return render_template('/staff.html') 
+  else:
+    pwd = request.form.get('pwd')
+    for i in range(len(names)):
+      if pwd = names[i]:
+        return render_template('/staffinfo.html', pwd=pwd, products=products, info=info)
+      else:
+        continue
+    return render_template('/staff.html')
+                     
 # ** Future Plan: **
 # prevent spam (repeated email, spam bots, valid documents)
 # create safe database
