@@ -10,7 +10,7 @@ products = ["testp"]
 names = ["eda", "shian pei", "jessica"]
 
 # Home Page
-@app.route('/index')
+@app.route('/')
 def index():
   return render_template('index.html')
 
