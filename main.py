@@ -22,10 +22,10 @@ def staff():
   if request.form.method == "GET": # get
     return render_template('staff.html') 
   else: # post
-    pwd = request.form('pwd')
+    name = request.form.get('pwd')
    
-    if pwd == "eda" or pwd == "shian pei" or pwd == "jessica":
-      render_template('staffinfo.html', pwd=pwd, info=info, products=products)
+    if name == "eda" or name == "shian pei" or name == "jessica":
+      render_template('staffinfo.html', name=name, info=info, products=products)
     else:
       render_template('staff.html')
     
