@@ -20,12 +20,12 @@ def index():
 @app.route('/staff', methods=["GET","POST"])
 def staff():
   if request.form.method == "GET": # get
-    return render_template('staff.html') 
+    return render_template('templates/staff.html') 
   else: # post
     name = request.form.get('pwd')
    
     if name == "eda" or name == "shian pei" or name == "jessica":
-      return render_template('info.html', name=name, info=info, products=products)
+      return render_template('templates/info.html', name=name, info=info, products=products)
     else:
       return render_template('index.html')
     
