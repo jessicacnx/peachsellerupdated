@@ -5,13 +5,9 @@ from werkzeug import secure_filename
 from PIL import Image as img
 app = Flask(__name__)
 
-
-
 info = []
 products = []
 names = ["eda", "shian pei", "jessica"]
-
-
 
 # Home Page
 @app.route('/index')
@@ -27,13 +23,11 @@ def staff():
     return render_template('staff.html') 
   else: # post
     pwd = request.form.get('pwd')
-    for i in range(len(names)):
-      if pwd == names[i]:
-        message = """<html>
-        <body>products</body><br><br>
-        <body>info</body>
-        </html>"""
-        render_template('staffinfo.html', message=message)
+   
+    if pwd == "eda" or pwd == "shian pei" or pwd == "jessica":
+        render_template('staffinfo.html', pwd=pwd, info=info, products=products)
+    else:
+      render_template('staff.html')
     
 
                      
